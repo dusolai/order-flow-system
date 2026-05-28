@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+  }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #f5f5f7;
+    background: #0a0a0b;
+  }
+  ::selection {
+    background: #ff6a00;
+    color: #000;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a0a0b;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #26262b;
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3a3a42;
+  }
+}
+
+@layer components {
+  .ofs-card {
+    @apply bg-ofs-card border border-ofs-border rounded-xl;
+  }
+  .ofs-btn {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors;
+  }
+  .ofs-btn-primary {
+    @apply ofs-btn bg-ofs-gradient text-white hover:opacity-90;
+  }
+  .ofs-btn-secondary {
+    @apply ofs-btn bg-ofs-panel border border-ofs-border text-ofs-text hover:bg-ofs-card;
+  }
+  .ofs-input {
+    @apply bg-ofs-panel border border-ofs-border rounded-lg px-3 py-2 text-ofs-text placeholder-ofs-mute focus:outline-none focus:border-ofs-accent;
+  }
+  .kpi-label {
+    @apply text-xs uppercase tracking-wider text-ofs-mute font-medium;
+  }
+  .kpi-value {
+    @apply text-2xl font-display font-bold text-ofs-text;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-medium;
+  }
+  .badge-good { @apply badge bg-ofs-good/15 text-ofs-good; }
+  .badge-warn { @apply badge bg-ofs-warn/15 text-ofs-warn; }
+  .badge-bad  { @apply badge bg-ofs-bad/15 text-ofs-bad; }
+  .badge-info { @apply badge bg-ofs-accent/15 text-ofs-accent; }
+}
